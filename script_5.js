@@ -70,4 +70,18 @@ console.log('=========================================================');
 //Trie les livres par ordre alphabétique (sans celui avec l'ID 133712 car il est supprimé)
 // Sort the books by alphabetical order (without the one with the ID 133712 because it is deleted)
 console.log('Sort the books by alphabetical order (without the one with the ID 133712 because it is deleted)');
-const sortedBooks = books.sort((a, b) =>
+const id = books.findIndex(book => book.id === 133712);
+console.log(id);
+const sortedBooks = books.filter(book => book.id !== 133712).sort((a, b) => a.title.localeCompare(b.title));
+console.log(sortedBooks);
+
+//ids =[];
+//books.forEach(book => {
+ //   ids.push(book.id);
+//});
+//console.log(ids);
+//console.log("livre à supprimer : ",books.splice([ids.indexOf(133712)], 1))
+//console.log("array réduit: ",books)
+
+console.log('=================================================================');
+
